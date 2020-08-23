@@ -1,5 +1,6 @@
 public class Problem26{
     public boolean isValidBST(TreeNode root) {
+        //Approach:Recursion
         return helper(root,null,null);
     }
 
