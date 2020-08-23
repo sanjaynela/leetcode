@@ -15,7 +15,7 @@ public class Problem23{
     A Linked List uses Objects commonly called Nodes. Each Node holds a value and a next pointer to the next node. 
     Accessing a node at a particular index would take O(n)time because we have to go down the list using the next pointers.
     Determining whether or not an Array List is a palindrome is straightforward. 
-    
+
     We can simply use the two-pointer technique to compare indexes at either end, moving in towards the middle. 
     One pointer starts at the start and goes up, and the other starts at the end and goes down. 
     This would take O(n)O(n) because each index access is O(1)O(1) and there are nn index accesses in total.
@@ -51,6 +51,28 @@ public class Problem23{
     node_1.val == node_2.val is the correct way of comparing the nodes. node_1 == node_2 will not work the way you expect.
      */
 
+    //Approach 1 : Copy into arraylist and then use two-pointer technique
+    ArrayList<Integer> list = new ArrayList<Integer>();
+        
+    // Convert LinkedList into ArrayList.
+    ListNode dummy = head;
+    while(dummy!=null){
+        list.add(dummy.val);
+        dummy = dummy.next;
+    }
     
+    // Use two-pointer technique to check for palindrome.
+    int front = 0;
+    int back = list.size() - 1;
+    while (front < back) {
+        // Note that we must use ! .equals instead of !=
+        // because we are comparing Integer, not int.
+        if (!list.get(front).equals(list.get(back))) {
+            return false;
+        }
+        front++;
+        back--;
+    }
+    return true;
     }
 }
