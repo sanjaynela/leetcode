@@ -2,7 +2,7 @@ public class Problem26Stack{
     public boolean isValidBST(TreeNode root) {
         //Approach : Inorder Traversal
         Stack<TreeNode> stack = new Stack<TreeNode>();
-        double inorder = Double.MAX_VALUE;
+        double inorder = -Double.MAX_VALUE;
 
         while(!stack.isEmpty() || root!=null){
             //Push to stack
