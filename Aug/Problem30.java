@@ -26,5 +26,25 @@ public class Problem30{
         for(int i=0;i<newArray.length;i++){
             nums1[i] = newArray[i];
         }
+
+        //Space Complexity : O(1)
+        // int[] newArray = new int[m+n];
+        // int a = m - 1;
+        // int b = n - 1;
+        // int k = m+n-1;
+        
+        // while(a>=0 && b>=0){
+        //     if(nums1[a]>nums2[b]){
+        //         nums1[k--] =  nums1[a--];
+        //     }
+        //     else{
+        //         nums1[k--] = nums2[b--];
+        //     }
+        // }
+        
+        // //Copy from nums2
+        // while(b>=0){
+        //     nums1[k--] = nums2[b--];
+        // }
     }
 }
